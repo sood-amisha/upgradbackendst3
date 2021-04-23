@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+
+    </head>
+    <body>
+    <form th:action="@{/logout}" method="post">
+        <input type="submit" value="signout">
+    </form><br>
+     <form th:action="@{/add_contact}" method="post" th:object="${contact}">
+         <label>name</label>
+         <input type="text"th:field="*{Name}" required minlength="2" maxlength="20">
+         <label>Email</label>
+         <input type="text"th:field="*{Email}" required minlength="6" maxlength="20">
+         <label >Phone Number</label>
+         <input type="number" th:field="*{number}" required minlength="10" maxlength="10"><br>
+         <input type="submit" value="Add">
+
+     </form>
+    </body>
+</html>
